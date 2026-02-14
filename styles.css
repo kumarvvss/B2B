@@ -1,0 +1,172 @@
+:root {
+  --bg: #eef7f2;
+  --panel: rgba(255, 255, 255, 0.88);
+  --line: #cde5d8;
+  --text: #153a3b;
+  --muted: #4c6f6d;
+  --green: #2f7f4f;
+  --teal: #1a7f93;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #f6fbf8 0%, var(--bg) 40%, #e7f2ec 100%);
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(to bottom, rgba(36, 122, 80, 0.08), transparent 25%),
+    repeating-linear-gradient(
+      to right,
+      rgba(40, 113, 74, 0.04) 0,
+      rgba(40, 113, 74, 0.04) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  pointer-events: none;
+}
+
+.platform-ui {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 95vw);
+  margin: 2rem auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(15, 73, 54, 0.08);
+  padding: 1rem 1.1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 1.6rem 1.2rem;
+  background: linear-gradient(180deg, rgba(245, 255, 251, 0.95), rgba(234, 247, 240, 0.95));
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0.35rem 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--green);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+h2,
+h3 {
+  margin: 0 0 0.55rem;
+}
+
+p,
+ul {
+  margin: 0;
+  color: var(--muted);
+}
+
+ul {
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.top-row,
+.mid-row,
+.bottom-row {
+  display: grid;
+  gap: 1rem;
+}
+
+.top-row {
+  grid-template-columns: 1fr 1.35fr 1fr;
+}
+
+.mid-row {
+  grid-template-columns: 1fr 1.5fr 1fr;
+}
+
+.bottom-row {
+  grid-template-columns: 1fr 2fr;
+}
+
+.chip-row {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip,
+.edge-services span,
+.network-node {
+  display: inline-block;
+  background: rgba(31, 126, 86, 0.09);
+  border: 1px solid rgba(31, 126, 86, 0.22);
+  border-radius: 999px;
+  padding: 0.32rem 0.65rem;
+  font-size: 0.86rem;
+  color: #1f6f51;
+}
+
+.network-grid {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.edge-layer {
+  background: linear-gradient(90deg, rgba(36, 136, 89, 0.13), rgba(24, 127, 148, 0.1));
+}
+
+.edge-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.phase-list {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.protocols {
+  margin-top: 0.6rem;
+  font-weight: 600;
+  color: #1f6f51;
+}
+
+@media (max-width: 980px) {
+  .top-row,
+  .mid-row,
+  .bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .network-grid {
+    grid-template-columns: 1fr;
+  }
+}
